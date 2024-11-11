@@ -2,31 +2,34 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class WalletExample : MonoBehaviour
+public class WalletForCashExample : MonoBehaviour
 {
     [SerializeField] private int _maxValueMoney;
+
     [SerializeField] private TMP_Text _countMoneyText;
 
-    private Wallet _wallet;
+    private Wallet _walletMoney;
+
 
     private void Awake()
     {
-        _wallet = new Wallet(_maxValueMoney);
+        _walletMoney = new Wallet(_maxValueMoney);
 
-        _wallet.Changed += OnWalletChanged;
-        _countMoneyText.text = _wallet.Value.ToString();
+        _walletMoney.Changed += OnWalletChanged;
+
+        _countMoneyText.text = _walletMoney.Value.ToString();
     }
 
     private void OnDestroy()
     {
-        _wallet.Changed -= OnWalletChanged;
+        _walletMoney.Changed -= OnWalletChanged;
     }
 
     public void TryAdd(int value)
     {
-        if (_wallet.IsEnoughSpace(value))
+        if (_walletMoney.IsEnoughSpace(value))
         {
-            _wallet.Add(value);
+            _walletMoney.Add(value);
         }
         else
         {
@@ -36,9 +39,9 @@ public class WalletExample : MonoBehaviour
 
     public void TryRemove(int value)
     {
-        if (_wallet.IsEnoughMoney(value))
+        if (_walletMoney.IsEnoughMoney(value))
         {
-            _wallet.Remove(value);
+            _walletMoney.Remove(value);
         }
         else
         {
