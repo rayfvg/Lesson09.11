@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915925952}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: 
         m_Mode: 1
@@ -444,6 +444,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &254143889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 254143891}
+  - component: {fileID: 254143890}
+  m_Layer: 0
+  m_Name: StartGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &254143890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254143889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc91e4e402c472d4fbbca9ffa5abfe8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ui: {fileID: 174946376}
+--- !u!4 &254143891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254143889}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440057483
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,8 +571,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915925953}
-        m_TargetAssemblyTypeName: TimerExample, Assembly-CSharp
+      - m_Target: {fileID: 611834297}
+        m_TargetAssemblyTypeName: TimeSliderView, Assembly-CSharp
+        m_MethodName: StartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1017438978}
+        m_TargetAssemblyTypeName: ElementsTimerView, Assembly-CSharp
         m_MethodName: StartTimer
         m_Mode: 1
         m_Arguments:
@@ -729,7 +786,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558653504}
   m_CullTransparentMesh: 1
---- !u!1 &568586501
+--- !u!1 &611834296
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -737,36 +794,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 568586503}
-  - component: {fileID: 568586502}
+  - component: {fileID: 611834298}
+  - component: {fileID: 611834297}
   m_Layer: 0
-  m_Name: WalletForCashExample
+  m_Name: TimeSliderView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &568586502
+--- !u!114 &611834297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568586501}
+  m_GameObject: {fileID: 611834296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11055099389f956449308fcf8ea7ef32, type: 3}
+  m_Script: {fileID: 11500000, guid: 99f233e017eb7e9438d52cfe0b92f513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxValueMoney: 1000
-  _countMoneyText: {fileID: 1799822617}
---- !u!4 &568586503
+  _slider: {fileID: 112757221}
+  _timeMax: 10
+  _contex: {fileID: 254143890}
+--- !u!4 &611834298
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568586501}
+  m_GameObject: {fileID: 611834296}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -909,52 +967,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669499643}
   m_CullTransparentMesh: 1
---- !u!1 &684189483
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 684189485}
-  - component: {fileID: 684189486}
-  m_Layer: 0
-  m_Name: WalletForDiamondExample
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &684189485
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684189483}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &684189486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684189483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539a7f33bd7775643b3792ee9d42ac3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxValueDiamond: 100
-  _countDiamondText: {fileID: 745372097}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,8 +1277,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915925953}
-        m_TargetAssemblyTypeName: TimerExample, Assembly-CSharp
+      - m_Target: {fileID: 611834297}
+        m_TargetAssemblyTypeName: TimeSliderView, Assembly-CSharp
+        m_MethodName: ResetT
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1017438978}
+        m_TargetAssemblyTypeName: ElementsTimerView, Assembly-CSharp
         m_MethodName: ResetT
         m_Mode: 1
         m_Arguments:
@@ -1473,7 +1497,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 684189486}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WalletForDiamondExample, Assembly-CSharp
         m_MethodName: TryRemove
         m_Mode: 3
@@ -1606,9 +1630,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 684189486}
-        m_TargetAssemblyTypeName: WalletForDiamondExample, Assembly-CSharp
-        m_MethodName: TryAdd
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Wallet, Assembly-CSharp
+        m_MethodName: Add
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1882,6 +1906,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967990893}
   m_CullTransparentMesh: 1
+--- !u!1 &1017438977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1017438979}
+  - component: {fileID: 1017438978}
+  m_Layer: 0
+  m_Name: TimeHeardView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1017438978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017438977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506a6ea5c2553a541902c201fd64ecc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "_hear\u0435Prefab": {fileID: 3052624156086795266, guid: f99764814d683084590507d35bde7c84, type: 3}
+  _conteinerHeart: {fileID: 2007185312}
+  _hearts: []
+  _contex: {fileID: 254143890}
+  _timeMax: 20
+--- !u!4 &1017438979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017438977}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076054237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,7 +2038,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1354008201}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WalletForEnergy, Assembly-CSharp
         m_MethodName: TryAdd
         m_Mode: 3
@@ -2232,7 +2305,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1354008201}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WalletForEnergy, Assembly-CSharp
         m_MethodName: TryRemove
         m_Mode: 3
@@ -2365,9 +2438,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 568586502}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WalletExample, Assembly-CSharp
-        m_MethodName: TryAdd
+        m_MethodName: 
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2549,52 +2622,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349329266}
   m_CullTransparentMesh: 1
---- !u!1 &1354008198
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1354008200}
-  - component: {fileID: 1354008201}
-  m_Layer: 0
-  m_Name: WalletForEnergyExample
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1354008200
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354008198}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1354008201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354008198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e81277ffa2411842bc20bf410568819, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxValueEnergy: 50
-  _countEnergyText: {fileID: 1205016580}
 --- !u!1 &1462810686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,7 +2953,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 568586502}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WalletExample, Assembly-CSharp
         m_MethodName: TryRemove
         m_Mode: 3
@@ -3326,8 +3353,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915925953}
-        m_TargetAssemblyTypeName: TimerExample, Assembly-CSharp
+      - m_Target: {fileID: 611834297}
+        m_TargetAssemblyTypeName: TimeSliderView, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1017438978}
+        m_TargetAssemblyTypeName: ElementsTimerView, Assembly-CSharp
         m_MethodName: Pause
         m_Mode: 1
         m_Arguments:
@@ -3649,57 +3688,6 @@ RectTransform:
   m_AnchoredPosition: {x: 491, y: -166}
   m_SizeDelta: {x: 271.0618, y: 174.8063}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1915925952
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1915925954}
-  - component: {fileID: 1915925953}
-  m_Layer: 0
-  m_Name: TimerExample
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1915925953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915925952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81ca792dde8636a44963dd3dfd17f41e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timeMax: 20
-  _contex: {fileID: 568586502}
-  _timerText: {fileID: 1890533320}
-  _slider: {fileID: 112757221}
-  "_hear\u0435Prefab": {fileID: 3052624156086795266, guid: f99764814d683084590507d35bde7c84, type: 3}
-  _conteinerHeart: {fileID: 2007185312}
-  _hearts: []
---- !u!4 &1915925954
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915925952}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 563.0498, y: 470.84286, z: -4.4779406}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1934269934
 GameObject:
   m_ObjectHideFlags: 0
@@ -3910,8 +3898,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1915925953}
-        m_TargetAssemblyTypeName: TimerExample, Assembly-CSharp
+      - m_Target: {fileID: 611834297}
+        m_TargetAssemblyTypeName: TimeSliderView, Assembly-CSharp
+        m_MethodName: StopTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1017438978}
+        m_TargetAssemblyTypeName: ElementsTimerView, Assembly-CSharp
         m_MethodName: StopTimer
         m_Mode: 1
         m_Arguments:
@@ -3966,9 +3966,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 963194228}
   - {fileID: 705507995}
-  - {fileID: 568586503}
-  - {fileID: 684189485}
-  - {fileID: 1354008200}
   - {fileID: 174946380}
   - {fileID: 1934269937}
-  - {fileID: 1915925954}
+  - {fileID: 254143891}
+  - {fileID: 611834298}
+  - {fileID: 1017438979}

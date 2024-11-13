@@ -1,8 +1,12 @@
 using System;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Wallet
+public class Wallet 
 {
     public event Action<int> Changed;
+
+    private Dictionary<Wallet, int> _wallets = new Dictionary<Wallet, int>();
     public Wallet(int maxValue)
     {
         if (maxValue < 0)

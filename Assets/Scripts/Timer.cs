@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using UnityEngine;
 
@@ -18,7 +18,7 @@ public class Timer
         _contex = contex;
 
         if (_timeMaximum < 0)
-            throw new ArgumentOutOfRangeException(nameof(timeMaximum), "Íå ìîæåò áûòü ìåíüøå íóëÿ");
+            throw new ArgumentOutOfRangeException(nameof(timeMaximum), "ÃÃ¥ Ã¬Ã®Ã¦Ã¥Ã² Ã¡Ã»Ã²Ã¼ Ã¬Ã¥Ã­Ã¼Ã¸Ã¥ Ã­Ã³Ã«Ã¿");
 
         CurrentTimer = _timeMaximum;
         _progress = _timeMaximum;
