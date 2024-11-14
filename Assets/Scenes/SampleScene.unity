@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 176789264}
   - component: {fileID: 176789266}
   - component: {fileID: 176789265}
+  - component: {fileID: 176789267}
   m_Layer: 5
   m_Name: CashImg
   m_TagString: Untagged
@@ -391,7 +392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f295f699311d6a4b8074198f425bc2e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -409,6 +410,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176789263}
   m_CullTransparentMesh: 1
+--- !u!114 &176789267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176789263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70859ff29e1f6e41877b9214895de22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 176789265}
+  ValueText: {fileID: 1799822617}
 --- !u!1 &203733860
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,27 +468,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254143891}
-  - component: {fileID: 254143890}
+  - component: {fileID: 254143892}
   m_Layer: 0
-  m_Name: StartGame
+  m_Name: BootStrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &254143890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254143889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc91e4e402c472d4fbbca9ffa5abfe8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ui: {fileID: 174946376}
 --- !u!4 &254143891
 Transform:
   m_ObjectHideFlags: 0
@@ -489,6 +491,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &254143892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254143889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d8b80db57a0ca49837789f12cf9930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoneyIcon: {fileID: 21300000, guid: 5f295f699311d6a4b8074198f425bc2e, type: 3}
+  DiamondIcon: {fileID: 21300000, guid: 12a948f864746c140a16b0c53387b5ef, type: 3}
+  EnergyIcon: {fileID: 21300000, guid: 73b033f70db95e7468204016597d6ba9, type: 3}
+  _walletView: {fileID: 464746893}
+  _timeMax: 10
+  _contex: {fileID: 254143892}
+  _elementsTimerView: {fileID: 1017438978}
+  _timeSliderView: {fileID: 611834297}
 --- !u!1 &440057483
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +655,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440057483}
   m_CullTransparentMesh: 1
+--- !u!1 &464746892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 464746894}
+  - component: {fileID: 464746893}
+  m_Layer: 0
+  m_Name: WalletView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &464746893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464746892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c124dbc2dbd3fa34190fa8c4e4e1baf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyViews:
+  - {fileID: 176789267}
+  - {fileID: 492938352}
+  - {fileID: 1462810690}
+--- !u!4 &464746894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464746892}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &492938348
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +714,7 @@ GameObject:
   - component: {fileID: 492938349}
   - component: {fileID: 492938351}
   - component: {fileID: 492938350}
+  - component: {fileID: 492938352}
   m_Layer: 5
   m_Name: DiamondImg
   m_TagString: Untagged
@@ -693,7 +764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 12a948f864746c140a16b0c53387b5ef, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -711,6 +782,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492938348}
   m_CullTransparentMesh: 1
+--- !u!114 &492938352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492938348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70859ff29e1f6e41877b9214895de22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 492938350}
+  ValueText: {fileID: 745372097}
 --- !u!1 &558653504
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 112757221}
   _timeMax: 10
-  _contex: {fileID: 254143890}
+  _contex: {fileID: 0}
 --- !u!4 &611834298
 Transform:
   m_ObjectHideFlags: 0
@@ -1938,8 +2023,6 @@ MonoBehaviour:
   "_hear\u0435Prefab": {fileID: 3052624156086795266, guid: f99764814d683084590507d35bde7c84, type: 3}
   _conteinerHeart: {fileID: 2007185312}
   _hearts: []
-  _contex: {fileID: 254143890}
-  _timeMax: 20
 --- !u!4 &1017438979
 Transform:
   m_ObjectHideFlags: 0
@@ -2633,6 +2716,7 @@ GameObject:
   - component: {fileID: 1462810687}
   - component: {fileID: 1462810689}
   - component: {fileID: 1462810688}
+  - component: {fileID: 1462810690}
   m_Layer: 5
   m_Name: EnergyImg
   m_TagString: Untagged
@@ -2682,7 +2766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 73b033f70db95e7468204016597d6ba9, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2700,6 +2784,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462810686}
   m_CullTransparentMesh: 1
+--- !u!114 &1462810690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462810686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70859ff29e1f6e41877b9214895de22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 1462810688}
+  ValueText: {fileID: 1205016580}
 --- !u!1 &1613332442
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,5 +4067,6 @@ SceneRoots:
   - {fileID: 174946380}
   - {fileID: 1934269937}
   - {fileID: 254143891}
+  - {fileID: 464746894}
   - {fileID: 611834298}
   - {fileID: 1017438979}

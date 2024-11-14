@@ -6,22 +6,23 @@ public class Timer
 {
     public event Action<float> OnTick;
 
-    private float _timeMaximum;
     private float _progress;
     private MonoBehaviour _contex;
 
     private bool _isWorking = false;
 
+    public float TimeMaximum {  get; private set; }
+
     public Timer(float timeMaximum, MonoBehaviour contex)
     {
-        _timeMaximum = timeMaximum;
+        TimeMaximum = timeMaximum;
         _contex = contex;
 
-        if (_timeMaximum < 0)
-            throw new ArgumentOutOfRangeException(nameof(timeMaximum), "Íå ìîæåò áûòü ìåíüøå íóëÿ");
+        if (TimeMaximum < 0)
+            throw new ArgumentOutOfRangeException(nameof(timeMaximum));
 
-        CurrentTimer = _timeMaximum;
-        _progress = _timeMaximum;
+        CurrentTimer = TimeMaximum;
+        _progress = TimeMaximum;
         _contex = contex;
     }
 
@@ -45,8 +46,8 @@ public class Timer
 
     public void ResetT()
     {
-        _progress = _timeMaximum;
-        CurrentTimer = _timeMaximum;
+        _progress = TimeMaximum;
+        CurrentTimer = TimeMaximum;
     }
 
     public void Pause()

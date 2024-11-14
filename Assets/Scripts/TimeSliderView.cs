@@ -6,13 +6,13 @@ public class TimeSliderView : MonoBehaviour
     [SerializeField] private Slider _slider;
 
     [SerializeField] private float _timeMax;
-    [SerializeField] private StartScene _contex;
+    [SerializeField] private MonoBehaviour _contex;
 
     private Timer _timeSliderView;
 
-    private void Awake()
+    public void Initialize(Timer timer)
     {
-        _timeSliderView = new Timer(_timeMax, _contex);
+        _timeSliderView = timer;
 
         _timeSliderView.OnTick += OnTimerChancet;
     }

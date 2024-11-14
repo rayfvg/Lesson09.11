@@ -7,22 +7,18 @@ public class ElementsTimerView : MonoBehaviour
     [SerializeField] private GameObject _conteinerHeart;
 
     [SerializeField] private List<GameObject> _hearts = new List<GameObject>();
-    [SerializeField] private StartScene _contex;
-
-    [SerializeField] private int _timeMax;
 
     private Timer _timeHeardView;
-    
 
-    private void Awake()
+    public void Initialize(Timer timer)
     {
-        _timeHeardView = new Timer(_timeMax, _contex);
+        _timeHeardView = timer;
         _timeHeardView.OnTick += OnTimerChancet;
 
-        for (int i = 0; i < _timeMax; i++)
+        for (int i = 0; i < timer.TimeMaximum; i++)
         {
-            GameObject heard = Instantiate(_hearåPrefab, transform.position, Quaternion.identity, _conteinerHeart.transform);
-            _hearts.Add(heard);
+            GameObject heart = Instantiate(_hearåPrefab, transform.position, Quaternion.identity, _conteinerHeart.transform);
+            _hearts.Add(heart);
         }
     }
 
@@ -33,7 +29,7 @@ public class ElementsTimerView : MonoBehaviour
 
     private void OnTimerChancet(float time)
     {
-        for (int i = (int)_timeMax; i > 0; i--)
+        for (int i = (int)_timeHeardView.TimeMaximum; i > 0; i--)
             _hearts[(int)time].gameObject.SetActive(false);
     }
 
